@@ -29,9 +29,8 @@ public class ExemploJTable01 implements JFrameBaseInterface {
     @Override
     public void instanciarComponentes() {
         jTable = new JTable();
-        Object[] colunas = new Object[]
-                    {"Nome", "Idade", "Altura"};
-        defaultTableModel = new DefaultTableModel(colunas, 0){
+        Object[] colunas = new Object[]{"Nome", "Idade", "Altura"};
+        defaultTableModel = new DefaultTableModel(colunas, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -60,7 +59,7 @@ public class ExemploJTable01 implements JFrameBaseInterface {
         jFrame.setSize(500, 500);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
-        jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     @Override

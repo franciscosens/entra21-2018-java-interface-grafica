@@ -1,3 +1,4 @@
+package exemplo05;
 
 import javax.swing.JFrame;
 import javax.swing.DefaultComboBoxModel;
@@ -10,13 +11,13 @@ import java.awt.event.ActionEvent;
 
 public class ExemploJComboBox01 {
 
-    public static void main(String[] args) {
+    public ExemploJComboBox01() {
 
         JFrame tela = new JFrame("Campo de Seleção");
         tela.setSize(500, 500);
         tela.setLayout(null);
         tela.setLocationRelativeTo(null);
-        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JLabel labelJogo = new JLabel("Jogo");
         labelJogo.setSize(70, 20);

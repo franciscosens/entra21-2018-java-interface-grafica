@@ -5,7 +5,7 @@ import java.awt.Color;
 
 public class ExemploJFrame01 {
 
-    public static void main(String[] args) {
+    public ExemploJFrame01() {
         // cria uma tela
         JFrame tela = new JFrame();
 
@@ -20,9 +20,8 @@ public class ExemploJFrame01 {
         tela.setLocationRelativeTo(null);
 
         // diz que quando o usuário fechar a aplicação
-        // irá encerrar o aplicativo
-        tela.setDefaultCloseOperation(
-                JFrame.EXIT_ON_CLOSE);
+        // não irá encerrar o aplicativo
+        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // define o título da janela
         tela.setTitle("HELLO WORLD");
@@ -31,9 +30,6 @@ public class ExemploJFrame01 {
         // tela.getContentPane().setBackground(Color.red);
         tela.getContentPane().setBackground(
                 Color.decode("#b3fc2a"));
-
-        //apresenta a janela
-        tela.show();
     }
 
 }

@@ -8,14 +8,13 @@ import java.awt.event.ActionEvent;
 
 public class ExemploJLabel01 {
 
-    public static void main(String[] args) {
+    public ExemploJLabel01() {
 
         JFrame jFrame = new JFrame("Exemplo JLabel");
         jFrame.setSize(500, 300);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
-        jFrame.setDefaultCloseOperation(
-                JFrame.EXIT_ON_CLOSE);
+        jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JLabel labelNome = new JLabel();
         labelNome.setText("Nome");

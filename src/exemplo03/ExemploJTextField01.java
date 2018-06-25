@@ -12,13 +12,13 @@ import java.awt.event.ActionEvent;
 
 public class ExemploJTextField01 {
 
-    public static void main(String[] args) {
+    public ExemploJTextField01() {
 
         JFrame tela = new JFrame("Meu primeiro campo");
         tela.setSize(500, 500);
         tela.setLayout(null);
         tela.setLocationRelativeTo(null);
-        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JLabel labelNome = new JLabel("Nome");
         labelNome.setSize(70, 20);

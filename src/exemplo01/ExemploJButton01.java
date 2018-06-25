@@ -9,13 +9,13 @@ public class ExemploJButton01 {
 
     static boolean somar = false;
 
-    public static void main(String[] args) {
+    public ExemploJButton01() {
 
         JFrame tela = new JFrame("Meu primeiro botão");
         tela.setSize(300, 400);
         tela.setLayout(null);
         tela.setLocationRelativeTo(null);
-        tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JButton botao01 = new JButton();
         botao01.setText("Não clique aqui!");
