@@ -112,6 +112,7 @@ public class ExemploHospitalJFrame implements JFrameBaseInterface {
     adicionarComponentes();
     acaoBotaoAdicionar();
     acaoEditar();
+    acaoExcluir();
     jFrame.setVisible(true);
   }
 
@@ -195,18 +196,18 @@ public class ExemploHospitalJFrame implements JFrameBaseInterface {
         hospital.setPrivado(jCheckBoxPrivado.isSelected());
         hospital.setCategoria(jComboBoxCategoria.getSelectedItem().toString());
 
-        if(linhaSelecionada == -1){
+        if (linhaSelecionada == -1) {
           hospitais.add(hospital);
           dtm.addRow(new Object[]{
             hospital.getNome(),
             hospital.getCnpj(),
             hospital.getRendaAnual()
           });
-        }else{
-hospitais.set(linhaSelecionada, hospital);
-dtm.setValueAt(hospital.getNome(), linhaSelecionada, 0);
-dtm.setValueAt(hospital.getCnpj(), linhaSelecionada, 1);  
-dtm.setValueAt(hospital.getRendaAnual(), linhaSelecionada, 2);
+        } else {
+          hospitais.set(linhaSelecionada, hospital);
+          dtm.setValueAt(hospital.getNome(), linhaSelecionada, 0);
+          dtm.setValueAt(hospital.getCnpj(), linhaSelecionada, 1);
+          dtm.setValueAt(hospital.getRendaAnual(), linhaSelecionada, 2);
         }
         limparCampos();
       }
@@ -221,12 +222,18 @@ dtm.setValueAt(hospital.getRendaAnual(), linhaSelecionada, 2);
     jComboBoxCategoria.setSelectedIndex(-1);
     jFormattedTextFieldCNPJ.setText("");
     jTextFieldNome.requestFocus();
+    linhaSelecionada = -1;
   }
 
   private void acaoEditar() {
     jButtonEditar.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
+        if (jTable.getSelectedRow() == -1) {
+          JOptionPane.showMessageDialog(null, "Seleciona um registro filho");
+          return;
+        }
+
         linhaSelecionada = jTable.getSelectedRow();
         Hospital hospital = hospitais.get(linhaSelecionada);
         preencherCampos(hospital);
@@ -246,5 +253,27 @@ dtm.setValueAt(hospital.getRendaAnual(), linhaSelecionada, 2);
             hospital.getCategoria());
     jCheckBoxPrivado.setSelected(hospital.isPrivado());
     jFormattedTextFieldCNPJ.setText(hospital.getCnpj());
+  }
+
+  private void acaoExcluir() {
+    jButtonExcluir.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        if (jTable.getSelectedRow() == -1) {
+          JOptionPane.showMessageDialog(null, "Seleciona um registro filho");
+          return;
+        }
+
+        int escolha = JOptionPane.showConfirmDialog(null,
+                "Deseja realmente apagar?", "Aviso",
+                JOptionPane.YES_NO_OPTION);
+        if (escolha == JOptionPane.YES_OPTION) {
+          linhaSelecionada = jTable.getSelectedRow();
+          dtm.removeRow(linhaSelecionada);
+          hospitais.remove(linhaSelecionada);
+          limparCampos();
+        }
+      }
+    });
   }
 }
