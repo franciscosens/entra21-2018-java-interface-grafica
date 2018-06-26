@@ -2,7 +2,7 @@ package exemplo09;
 
 import exemplo08.JFrameBaseInterface;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import static javax.swing.JFrame.DISPOSE_ON_CLOSE;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;

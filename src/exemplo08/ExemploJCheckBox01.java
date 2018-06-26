@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import static javax.swing.JFrame.DISPOSE_ON_CLOSE;
 import javax.swing.JOptionPane;
 
 /**
