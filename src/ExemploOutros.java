@@ -16,14 +16,24 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import outros.Exemplo01JFrame;
+import outros.Exemplo02JTextField;
+import outros.Exemplo03JTextAreaJButton;
+import outros.Exemplo04JRadioButton;
+import outros.Exemplo05JCheckBox;
+import outros.Exemplo06JPassword;
+import outros.Exemplo07JComboBox;
+import outros.Exemplo08JButton;
+import outros.Exemplo09ImageIcon;
+import outros.Exemplo10JTable;
+import outros.Exemplo11KeyListener;
 
 /**
  * @author Francisco Lucas Sens
  */
-public class ExemploTudo implements JFrameBaseInterface {
+public class ExemploOutros implements JFrameBaseInterface {
 
     private JFrame jFrame;
-    private JButton jButton00;
     private JButton jButton01;
     private JButton jButton02;
     private JButton jButton03;
@@ -34,9 +44,9 @@ public class ExemploTudo implements JFrameBaseInterface {
     private JButton jButton08;
     private JButton jButton09;
     private JButton jButton10;
-    private JButton jButtonOutros;
+    private JButton jButton11;
 
-    public ExemploTudo() {
+    public ExemploOutros() {
         gerarTela();
         instanciarComponentes();
         gerarDimensoes();
@@ -53,7 +63,6 @@ public class ExemploTudo implements JFrameBaseInterface {
         acaoJButton08();
         acaoJButton09();
         acaoJButton10();
-        acaoJButtonOutros();
         jFrame.setVisible(true);
     }
 
@@ -63,12 +72,11 @@ public class ExemploTudo implements JFrameBaseInterface {
         jFrame.setSize(500, 500);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
-        jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     @Override
     public void adicionarComponentes() {
-        jFrame.add(jButton00);
         jFrame.add(jButton01);
         jFrame.add(jButton02);
         jFrame.add(jButton03);
@@ -79,12 +87,11 @@ public class ExemploTudo implements JFrameBaseInterface {
         jFrame.add(jButton08);
         jFrame.add(jButton09);
         jFrame.add(jButton10);
-        jFrame.add(jButtonOutros);
+        jFrame.add(jButton11);
     }
 
     @Override
     public void instanciarComponentes() {
-        jButton00 = new JButton("Exemplo 00");
         jButton01 = new JButton("Exemplo 01");
         jButton02 = new JButton("Exemplo 02");
         jButton03 = new JButton("Exemplo 03");
@@ -95,28 +102,26 @@ public class ExemploTudo implements JFrameBaseInterface {
         jButton08 = new JButton("Exemplo 08");
         jButton09 = new JButton("Exemplo 09");
         jButton10 = new JButton("Exemplo 10");
-        jButtonOutros = new JButton("Outros");
+        jButton11 = new JButton("Exemplo 11");
     }
 
     @Override
     public void gerarLocalizacoes() {
-        jButton00.setLocation(10, 10);
-        jButton01.setLocation(120, 10);
-        jButton02.setLocation(230, 10);
-        jButton03.setLocation(340, 10);
-        jButton04.setLocation(10, 120);
-        jButton05.setLocation(120, 120);
-        jButton06.setLocation(230, 120);
-        jButton07.setLocation(340, 120);
-        jButton08.setLocation(10, 230);
-        jButton09.setLocation(120, 230);
-        jButton10.setLocation(230, 230);
-        jButtonOutros.setLocation(340, 230);
+        jButton01.setLocation(10, 10);
+        jButton02.setLocation(120, 10);
+        jButton03.setLocation(230, 10);
+        jButton04.setLocation(340, 10);
+        jButton05.setLocation(10, 120);
+        jButton06.setLocation(120, 120);
+        jButton07.setLocation(230, 120);
+        jButton08.setLocation(340, 120);
+        jButton09.setLocation(10, 230);
+        jButton10.setLocation(120, 230);
+        jButton11.setLocation(230, 230);
     }
 
     @Override
     public void gerarDimensoes() {
-        jButton00.setSize(100, 100);
         jButton01.setSize(100, 100);
         jButton02.setSize(100, 100);
         jButton03.setSize(100, 100);
@@ -127,114 +132,106 @@ public class ExemploTudo implements JFrameBaseInterface {
         jButton08.setSize(100, 100);
         jButton09.setSize(100, 100);
         jButton10.setSize(100, 100);
-        jButtonOutros.setSize(100, 100);
+        jButton11.setSize(100, 100);
     }
 
     public void acaoJButton00() {
-        jButton00.addActionListener(new ActionListener() {
+        jButton01.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJRadioButton01();
+                new Exemplo01JFrame();
             }
         });
     }
 
     public void acaoJButton01() {
-        jButton01.addActionListener(new ActionListener() {
+        jButton02.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJButton01();
+                new Exemplo02JTextField();
             }
         });
     }
 
     public void acaoJButton02() {
-        jButton02.addActionListener(new ActionListener() {
+        jButton03.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJLabel01();
+                new Exemplo03JTextAreaJButton();
             }
         });
     }
 
     public void acaoJButton03() {
-        jButton03.addActionListener(new ActionListener() {
+        jButton04.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJTextField01();
+                new Exemplo04JRadioButton();
             }
         });
     }
 
     public void acaoJButton04() {
-        jButton04.addActionListener(new ActionListener() {
+        jButton05.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJButton02();
+                new Exemplo05JCheckBox();
             }
         });
     }
 
     public void acaoJButton05() {
-        jButton05.addActionListener(new ActionListener() {
+        jButton06.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJComboBox01();
+                new Exemplo06JPassword();
             }
         });
     }
 
     public void acaoJButton06() {
-        jButton06.addActionListener(new ActionListener() {
+        jButton07.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJTextArea01();
+                new Exemplo07JComboBox();
             }
         });
     }
 
     public void acaoJButton07() {
-        jButton07.addActionListener(new ActionListener() {
+        jButton08.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJRadioButton01();
+                new Exemplo08JButton();
             }
         });
     }
 
     public void acaoJButton08() {
-        jButton08.addActionListener(new ActionListener() {
+        jButton09.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJCheckBox01();
+                new Exemplo09ImageIcon();
             }
         });
     }
 
     public void acaoJButton09() {
-        jButton09.addActionListener(new ActionListener() {
+        jButton10.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploJTable01();
+                new Exemplo10JTable();
             }
         });
     }
 
     public void acaoJButton10() {
-        jButton10.addActionListener(new ActionListener() {
+        jButton11.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ExemploHospitalJFrame();
+                new Exemplo11KeyListener();
             }
         });
     }
 
-    public void acaoJButtonOutros() {
-        jButtonOutros.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new ExemploOutros();
-            }
-        });
-    }
 }
